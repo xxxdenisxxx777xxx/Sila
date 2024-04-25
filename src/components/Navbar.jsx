@@ -43,7 +43,7 @@ export default function Example() {
 
 
     return (
-        <header className="z-50 mb-0">
+        <header className="z-50 md: z-0 mb-0">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
