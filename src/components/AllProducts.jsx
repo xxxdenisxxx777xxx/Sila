@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReviewProducts from "./ReviewProducts";
 export default function AllProducts() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -429,14 +430,20 @@ export default function AllProducts() {
                                                 </div>
                                             </div>
 
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
                     </section>
                 </main>
             </div>
+
         </div>
+
+
     )
 }
