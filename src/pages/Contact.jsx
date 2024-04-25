@@ -17,7 +17,7 @@ export default function Contact() {
                 <div className="mx-auto max-w-2xl ">
                     <h2 className="text-4xl font-bold tracking-tight text-black sm:text-6xl items-center justify-center">Контакти</h2>
                     <p className="mt-6 text-lg leading-8 text-gray-600 ">
-                        Добро пожаловать на страницу контактов нашей компании! Мы ценим ваш интерес к нашей деятельности и готовы ответить на любые вопросы, обсудить предложения сотрудничества или просто пообщаться.                    </p>
+                        Ласкаво просимо на сторінку контактів нашої компанії! Ми цінуємо ваш інтерес до нашої діяльності і готові відповісти на будь-які запитання, обговорити пропозиції співпраці або просто поговорити. </p>
                 </div>
                 <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
                     <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-blak sm:grid-cols-2 md:flex lg:gap-x-10 items-center justify-center">
