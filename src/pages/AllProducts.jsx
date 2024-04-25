@@ -1,7 +1,13 @@
 import { useState } from "react";
-import ReviewProducts from "./ReviewProducts";
+import ReviewProducts from "../components/ReviewProducts";
 export default function AllProducts() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -249,7 +255,7 @@ export default function AllProducts() {
                                 <div class="border-b border-gray-200 py-6">
                                     <h3 class="-my-3 flow-root">
                                         <button type="button" class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false">
-                                            <span class="font-medium text-gray-900">Колір</span>
+                                            <span class="font-medium text-gray-900">Розмір</span>
                                             <span class="ml-6 flex items-center">
                                                 <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
@@ -264,27 +270,19 @@ export default function AllProducts() {
                                         <div class="space-y-4">
                                             <div class="flex items-center">
                                                 <input id="filter-color-0" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                                                <label for="filter-color-0" class="ml-3 text-sm text-gray-600">Білий</label>
+                                                <label for="filter-color-0" class="ml-3 text-sm text-gray-600">2м</label>
                                             </div>
                                             <div class="flex items-center">
                                                 <input id="filter-color-1" name="color[]" value="beige" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                                                <label for="filter-color-1" class="ml-3 text-sm text-gray-600">Бежевий</label>
+                                                <label for="filter-color-1" class="ml-3 text-sm text-gray-600">2.4м</label>
                                             </div>
                                             <div class="flex items-center">
-                                                <input id="filter-color-2" name="color[]" value="blue" type="checkbox" checked class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                                                <label for="filter-color-2" class="ml-3 text-sm text-gray-600">Синій</label>
+                                                <input id="filter-color-1" name="color[]" value="beige" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                                                <label for="filter-color-1" class="ml-3 text-sm text-gray-600">3м</label>
                                             </div>
                                             <div class="flex items-center">
                                                 <input id="filter-color-3" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                                                <label for="filter-color-3" class="ml-3 text-sm text-gray-600">Коричневий</label>
-                                            </div>
-                                            <div class="flex items-center">
-                                                <input id="filter-color-4" name="color[]" value="green" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                                                <label for="filter-color-4" class="ml-3 text-sm text-gray-600">Зелений</label>
-                                            </div>
-                                            <div class="flex items-center">
-                                                <input id="filter-color-5" name="color[]" value="purple" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                                                <label for="filter-color-5" class="ml-3 text-sm text-gray-600">Фіолетовий</label>
+                                                <label for="filter-color-3" class="ml-3 text-sm text-gray-600">3.4м</label>
                                             </div>
                                         </div>
                                     </div>
@@ -376,66 +374,66 @@ export default function AllProducts() {
                             <div className="lg:col-span-3">
                                 <div className="bg-white">
                                     <div className="mx-auto max-w-2xl ">
-
-                                        <div className="grid grid-cols-3 gap-28">
-                                            <div className="group relative w-[230px]">
-                                                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                                                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                                        <div className="grid grid-cols-3 gap-28" >
+                                            <div className="group relative w-[230px]" onClick={openModal}>
+                                                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                                    <img src="https://optim.tildacdn.com/stor3462-3765-4238-b233-666565303665/-/format/webp/38240457.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-contain object-center lg:h-full lg:w-full" />
                                                 </div>
                                                 <div className="mt-4 flex justify-between">
                                                     <div>
                                                         <h3 className="text-sm text-gray-700">
                                                             <a href="#">
                                                                 <span aria-hidden="true" className="absolute inset-0"></span>
-                                                                Basic Tee
+                                                                Леска для тримера
                                                             </a>
                                                         </h3>
-                                                        <p className="mt-1 text-sm text-gray-500">Black</p>
+                                                        <p className="mt-1 text-sm text-gray-500 justify-start items-start text-left">1.6м</p>
                                                     </div>
-                                                    <p className="text-sm font-medium text-gray-900">$35</p>
+                                                    <p className="text-sm font-medium text-gray-900 justify-start items-start text-left">25 грн</p>
                                                 </div>
                                             </div>
-                                            <div className="group relative w-[230px]">
-                                                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                                                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                                            <div className="group relative w-[230px]" onClick={openModal}>
+                                                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                                    <img src="https://optim.tildacdn.com/stor3462-3765-4238-b233-666565303665/-/format/webp/38240457.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-contain object-center lg:h-full lg:w-full" />
                                                 </div>
                                                 <div className="mt-4 flex justify-between">
                                                     <div>
                                                         <h3 className="text-sm text-gray-700">
                                                             <a href="#">
                                                                 <span aria-hidden="true" className="absolute inset-0"></span>
-                                                                Basic Tee
+                                                                Леска для тримера
                                                             </a>
                                                         </h3>
-                                                        <p className="mt-1 text-sm text-gray-500">Black</p>
+                                                        <p className="mt-1 text-sm text-gray-500 justify-start items-start text-left">2м</p>
                                                     </div>
-                                                    <p className="text-sm font-medium text-gray-900">$35</p>
+                                                    <p className="text-sm font-medium text-gray-900 justify-start items-start text-left">25 грн</p>
                                                 </div>
                                             </div>
-                                            <div className="group relative w-[230px]">
-                                                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                                                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                                            <div className="group relative w-[230px]" onClick={openModal}>
+                                                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                                    <img src="https://optim.tildacdn.com/stor3462-3765-4238-b233-666565303665/-/format/webp/38240457.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-contain object-center lg:h-full lg:w-full" />
                                                 </div>
                                                 <div className="mt-4 flex justify-between">
                                                     <div>
                                                         <h3 className="text-sm text-gray-700">
                                                             <a href="#">
                                                                 <span aria-hidden="true" className="absolute inset-0"></span>
-                                                                Basic Tee
+                                                                Леска для тримера
                                                             </a>
                                                         </h3>
-                                                        <p className="mt-1 text-sm text-gray-500">Black</p>
+                                                        <p className="mt-1 text-sm text-gray-500 justify-start items-start text-left ">2.4м</p>
                                                     </div>
-                                                    <p className="text-sm font-medium text-gray-900">$35</p>
+                                                    <p className="text-sm font-medium text-gray-900">25 грн</p>
                                                 </div>
                                             </div>
-
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                            {isModalOpen && (
+                                <ReviewProducts isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+                            )}
                         </div>
 
                     </section>
@@ -443,7 +441,5 @@ export default function AllProducts() {
             </div>
 
         </div>
-
-
     )
 }

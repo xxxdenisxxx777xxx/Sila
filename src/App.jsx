@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css'
 import Example from './components/Navbar';
-import Lend from './components/Lend';
+import Lend from './pages/Lend';
 import AppRoute from './router/AppRouter';
 
 
