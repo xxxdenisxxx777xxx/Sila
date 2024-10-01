@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReviewProducts from "../components/ReviewProducts";
-export default function AllProducts() {
+export default function AllProducts(cartCount, toggleCart) {
     const [isOpen, setIsOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -103,9 +103,27 @@ export default function AllProducts() {
                                             <span class="font-medium text-gray-900">Category</span>
                                             <span class="ml-6 flex items-center">                                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                 <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                                            </svg>                                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path fill-rule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clip-rule="evenodd" />
-                                                </svg>
+                                            </svg>                                                  <div className="relative cursor-pointer" onClick={toggleCart}>
+                                                    <svg
+                                                        className="w-8 h-8 text-gray-700 hover:text-gray-900"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth={2}
+                                                            d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13l-1.6 8m0 0H4m1.4 0a1 1 0 001 1h12a1 1 0 001-1m-14-9h16m-5 5a2 2 0 110 4 2 2 0 010-4m-10 0a2 2 0 110 4 2 2 0 010-4"
+                                                        />
+                                                    </svg>
+                                                    {cartCount > 0 && (
+                                                        <div className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                                                            {cartCount}
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </span>
                                         </button>
                                     </h3>                                    <div class="pt-6" id="filter-section-mobile-1">
@@ -210,7 +228,7 @@ export default function AllProducts() {
                             <button type="button" class="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
                                 <span class="sr-only">View grid</span>
                                 <svg class="h-5 w-5" aria-hidden="true" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M4.25 2A2.25 2.25 0 002 4.25v2.5A2.25 2.25 0 004.25 9h2.5A2.25 2.25 0 009 6.75v-2.5A2.25 2.25 0 006.75 2h-2.5zm0 9A2.25 2.25 0 002 13.25v2.5A2.25 2.25 0 004.25 18h2.5A2.25 2.25 0 009 15.75v-2.5A2.25 2.25 0 006.75 11h-2.5zm9-9A2.25 2.25 0 0011 4.25v2.5A2.25 2.25 0 0013.25 9h2.5A2.25 2.25 0 0018 6.75v-2.5A2.25 2.25 0 0015.75 2h-2.5zm0 9A2.25 2.25 0 0011 13.25v2.5A2.25 2.25 0 0013.25 18h2.5A2.25 2.25 0 0018 15.75v-2.5A2.25 2.25 0 0015.75 11h-2.5z" clip-rule="evenodd" />
+                                    <path fill-rule="evenodd" d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13l-1.6 8m0 0H4m1.4 0a1 1 0 001 1h12a1 1 0 001-1m-14-9h16m-5 5a2 2 0 110 4 2 2 0 010-4m-10 0a2 2 0 110 4 2 2 0 010-4" clip-rule="evenodd" />
                                 </svg>
                             </button>
                             <button type="button" class="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden">
